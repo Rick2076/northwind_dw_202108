@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: fact_order
+    description: "tabela de fatos"
+    columns:
+      - name: order_id
+        description: chave primária original da tabela 
+        #tests:
+
+  - name: dim_customer
+    description: "tabela de dimensao"
+    columns:
+      - name: customer_id
+        description: chave primária original da tabela dim_customer
