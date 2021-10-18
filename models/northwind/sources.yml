@@ -5,10 +5,7 @@ sources:
     tables:
       - name: orders
         description: tabela de clientes
-        columns:
-          - name: order_id
-            description: primary key
-
+        
       - name: customers
         description: tabela de clientes
 
