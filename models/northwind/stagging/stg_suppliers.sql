@@ -1,5 +1,5 @@
 WITH 
-    source as (
+    sources as (
     SELECT 
         row_number() over(order by supplier_id) as supplier_sk
         supplier_id	
@@ -17,4 +17,4 @@ WITH
     FROM {{ source('northwind_erp','suppliers') }}
     )
 
-SELECT * FROM source
+SELECT * FROM sources
