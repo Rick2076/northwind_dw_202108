@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: northwind_erp
+    tables:
+      - name: orders
+        description: tabela de clientes
+        
+      - name: customers
+        description: tabela de clientes
+
+      - name: products
+        description: tabela de produtos
+        
+      - name: shippers
+        description: tabela de transportadores
+        
+      - name: suppliers
+        description: tabela de fornecedores
+        
+      - name: employees
+        description: tabela de empregados

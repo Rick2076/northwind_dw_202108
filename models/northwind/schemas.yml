@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fact_order
+    description: "tabela de fatos"
+    columns:
+      - name: order_id
+        description: chave primária original da tabela 
+        #tests:
+
+  - name: dim_customers
+    description: "tabela de dimensao"
+    columns:
+      - name: customer_id
+        description: chave primária original da tabela dim_customer
+
+  - name: dim_products
+    description: "tabela de produtos"
+    columns:
+      - name: product_id
+        description: chave primária original da tabela dim_products
+        
+  - name: dim_shippers
+    description: "tabela de dimensao"
+    columns:
+      - name: shipper_id
+        description: chave primária original da tabela dim_shippers
+        
+  - name: dim_suppliers
+    description: "tabela de dimensao"
+    columns:
+      - name: supplier_id
+        description: chave primária original da tabela dim_suppliers
