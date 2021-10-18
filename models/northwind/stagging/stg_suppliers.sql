@@ -1,6 +1,7 @@
 WITH 
     source as (
     SELECT 
+        row_number() over(order by supplier_id) as supplier_sk
         supplier_id	
         , company_name	
         , contact_name	

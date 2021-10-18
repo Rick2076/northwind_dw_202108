@@ -7,6 +7,24 @@ with
         , customer_id
         from {{ ref('dim_customer') }}
     )
+    products as (
+        Select
+        products_sk
+        , products_id
+        from {{ ref('dim_products') }}
+    )
+    shippers as (
+        Select
+        shippers_sk
+        , shippers_id
+        from {{ ref('dim_shippers') }}
+    )
+    suppliers as (
+        Select
+        suppliers_sk
+        , suppliers_id
+        from {{ ref('dim_suppliers') }}
+    )
     order_with_sk as (
         Select
         order.order_id

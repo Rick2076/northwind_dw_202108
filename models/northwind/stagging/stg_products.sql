@@ -1,6 +1,7 @@
 WITH 
     source as (
     SELECT 
+        row_number() over(order by product_id) as product_sk
         product_id			
         , category_id			
         , product_name	
@@ -13,6 +14,4 @@ WITH
         , discontinued	
     FROM {{ source('northwind_erp','products') }}
     )
-	
-
 SELECT * FROM source
