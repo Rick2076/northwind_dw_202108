@@ -4,11 +4,25 @@ sources:
   - name: northwind_erp
     tables:
       - name: order
-      - name: customers
         description: tabela de clientes
         columns:
-          - name: customer_id
-            description: id do cliente
+          - name: order_id
+            description: primary key
             tests:
               - unique
-              - not_null
+              - not null
+
+      - name: customers
+        description: tabela de clientes
+
+      - name: products
+        description: tabela de produtos
+        
+      - name: shippers
+        description: tabela de transportadores
+        
+      - name: suppliers
+        description: tabela de fornecedores
+        
+      - name: employees
+        description: tabela de empregados

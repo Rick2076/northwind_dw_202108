@@ -3,7 +3,7 @@
 WITH
     staging as (
     SELECT *
-    FROM {{ ref('stg_products') }}
+    FROM {{ ref('stg_suppliers') }}
     )
 
     ,transformed as (

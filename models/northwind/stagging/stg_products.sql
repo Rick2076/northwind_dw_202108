@@ -17,6 +17,7 @@ WITH
                 when discontinued = 1 then True
                 else False
                 end as is_discotinued
+                
             ---Sticht
             ,_sdc_table_version	
             ,_sdc_received_at

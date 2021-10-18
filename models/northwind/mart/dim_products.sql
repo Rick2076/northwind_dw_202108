@@ -9,7 +9,7 @@ WITH
     ,transformed as (
     SELECT 
         row_number() over(order by product_id) as product_sk
-        product_id
+        , product_id
         , category_id
         , product_name	
         , unit_price

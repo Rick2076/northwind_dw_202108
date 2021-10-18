@@ -2,11 +2,6 @@
 
 WITH
     staging as (
-    SELECT *
-    FROM {{ ref('stg_customer') }}
-    )
-
-    ,transformed as (
     SELECT 
         row_number() over(order by customer_id) as customer_sk
         , country
@@ -20,7 +15,7 @@ WITH
         , phone
         , company_name
         , contact_title
-    FROM staging
+    FROM {{ ref('stg_customer') }}
 )
 
-SELECT* From transformed
+SELECT* From staging

@@ -13,6 +13,12 @@ WITH
         , phone
         , company_name
         , contact_title
+        
+        ---Sticht
+        ,_sdc_table_version	
+        ,_sdc_received_at
+        ,_sdc_sequence
+        ,_sdc_batched_at
     FROM {{ source('northwind_erp','customers') }}
 )
 

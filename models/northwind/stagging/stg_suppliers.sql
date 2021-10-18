@@ -1,7 +1,6 @@
 WITH 
     sources as (
     SELECT 
-        row_number() over(order by supplier_id) as supplier_sk
         supplier_id	
         , company_name	
         , contact_name	
@@ -13,7 +12,13 @@ WITH
         , fax	
         , homepage		
         , postal_code	
-        , phone	
+        , phone
+        
+        ---Sticht
+        ,_sdc_table_version	
+        ,_sdc_received_at
+        ,_sdc_sequence
+        ,_sdc_batched_at
     FROM {{ source('northwind_erp','suppliers') }}
     )
 
