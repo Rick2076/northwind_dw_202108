@@ -1,11 +1,11 @@
----{{ config(materialized-'table') }}
+{{ config(materialized='table') }}
 
 with 
     customers as (
         Select
         customer_sk
         , customer_id
-        from {{ ref('dim_customers') }}
+        from {{ ref('dim_customer') }}
     )
     order_with_sk as (
         Select

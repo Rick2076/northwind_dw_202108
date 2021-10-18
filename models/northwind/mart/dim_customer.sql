@@ -1,9 +1,9 @@
----{{ config(materialized-'table') }}
+{{ config(materialized='table') }}
 
 WITH
     staging as (
     SELECT *
-    FROM {{ ref('stg_customers') }}
+    FROM {{ ref('stg_customer') }}
     )
 
     ,transformed as (

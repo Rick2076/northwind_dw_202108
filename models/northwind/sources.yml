@@ -5,7 +5,7 @@ sources:
     tables:
       - name: order
       - name: customers
-      description: tabela de clientes
+        description: tabela de clientes
         columns:
           - name: customer_id
             description: id do cliente
