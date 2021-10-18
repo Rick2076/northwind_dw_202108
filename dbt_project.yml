@@ -33,8 +33,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   northwind_shop:
       # Applies to all files under models/example/
-      example:
-          materialized: view
+ #     example:
+#          materialized: view
       northwind:
           materialized: view
 
