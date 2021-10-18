@@ -1,18 +1,18 @@
 {{ config(materialized='table') }}
 
 WITH
-    staging as (
-    SELECT *
-    FROM {{ ref('stg_shippers') }}
-    )
-
-    ,transformed as (
-    SELECT 
-        row_number() over(order by shipper_id) as shipper_sk
+    selected as (
+        SELECT 
         shipper_id	
         , phone	
         , company_name
-    FROM staging
+        FROM {{ ref('stg_shippers') }}
+)
+    ,transformed as (
+        SELECT 
+            row_number() over(order by shipper_id) as shipper_sk
+            ,*	
+        FROM selected
 )
 
 SELECT* From transformed

@@ -5,7 +5,7 @@ with
         Select
         customer_sk
         , customer_id
-        from {{ ref('dim_customer') }}
+        from {{ ref('dim_customers') }}
     )
     order_with_sk as (
         Select
@@ -21,7 +21,7 @@ with
         , order.ship_name
         , order.freight
         , order.required_date]
-        from {{ref('stg_order')}} order
+        from {{ref('stg_orders')}} order
         left join customers customer on order.customer_id = customer.customer_id
     )
 Select * from order_with_sk

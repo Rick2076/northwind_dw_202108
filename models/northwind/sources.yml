@@ -3,14 +3,11 @@ version: 2
 sources:
   - name: northwind_erp
     tables:
-      - name: order
+      - name: orders
         description: tabela de clientes
         columns:
           - name: order_id
             description: primary key
-            tests:
-              - unique
-              - not null
 
       - name: customers
         description: tabela de clientes

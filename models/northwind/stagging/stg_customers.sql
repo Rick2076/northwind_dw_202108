@@ -1,18 +1,17 @@
 WITH
-    source as (
+    sources as (
     SELECT 
-        row_number() over(order by customer_id) as customer_sk
+        customer_id
+        , contact_name
+        , contact_title
         , country
         , city
-        , fax
         , postal_code
         , address
         , region
-        , customer_id
-        , contact_name
         , phone
         , company_name
-        , contact_title
+        , fax
         
         ---Sticht
         ,_sdc_table_version	
@@ -22,4 +21,4 @@ WITH
     FROM {{ source('northwind_erp','customers') }}
 )
 
-SELECT * FROM source
+SELECT * FROM sources
