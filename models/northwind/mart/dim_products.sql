@@ -12,7 +12,7 @@ WITH
         , units_on_order			
         , quantity_per_unit
         , reorder_level 	
-        , case when
+        , case
             when discontinued = 1 then True
             else False
             end as is_discotinued        

@@ -6,7 +6,7 @@ with
         customer_sk
         , customer_id
         from {{ ref('dim_customers') }}
-    )
+),
     order_with_sk as (
         Select
         order.order_id
