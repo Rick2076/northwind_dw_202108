@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: northwind_erp
+  - name: northwind_etl
     tables:
       - name: orders
         description: tabela de clientes

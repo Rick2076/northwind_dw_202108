@@ -21,7 +21,7 @@ WITH
         ,_sdc_received_at
         ,_sdc_sequence
         ,_sdc_batched_at
-    FROM {{ source('northwind_erp','orders') }}
+    FROM {{ source('northwind_etl','orders') }}
     )
 
 SELECT* From source
