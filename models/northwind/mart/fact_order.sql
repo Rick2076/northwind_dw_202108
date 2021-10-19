@@ -46,7 +46,7 @@ with
         Select
         o.order_id
         , o.shipper_fk
-        , o.custom_fk
+        , o.customer_fk
         , od.product_fk
         , o.order_date
         , o.ship_region
