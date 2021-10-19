@@ -1,19 +1,19 @@
 WITH
     source as (
     SELECT 
-        order_id
-        , customer_id
-        , ship_via as shipper_id
-        , employee_id
-        , order_date
-        , ship_region
-        , shipped_date
-        , ship_country
-        , ship_address
-        , ship_postal_code
-        , ship_city
-        , ship_name
-        , freight
+        o.order_id
+        , o.customer_id
+        , o.ship_via as shipper_id
+        , o.employee_id
+        , o.order_date
+        , o.ship_region
+        , o.shipped_date
+        , o.ship_country
+        , o.ship_address
+        , o.ship_postal_code
+        , o.ship_city
+        , o.ship_name
+        , o.freight
         , cast(required_date as timestamp) as required_date
         
         ---Sticht
@@ -21,7 +21,7 @@ WITH
         ,_sdc_received_at
         ,_sdc_sequence
         ,_sdc_batched_at
-    FROM {{ source('northwind_etl','orders') }}
+    FROM {{ source('northwind_etl','orders') }} as o
     )
 
 SELECT* From source

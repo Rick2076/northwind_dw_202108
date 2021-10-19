@@ -12,9 +12,9 @@ WITH
         , units_on_order			
         , quantity_per_unit
         , reorder_level 	
-        , case when
-            when discontinued = 1 then True
-            else False
+        , case
+                when discontinued = 1 then True
+                else False
             end as is_discotinued
             
         ---Sticht

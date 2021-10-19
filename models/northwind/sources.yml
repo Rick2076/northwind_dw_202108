@@ -4,8 +4,11 @@ sources:
   - name: northwind_etl
     tables:
       - name: orders
-        description: tabela de clientes
+        description: tabela de ordens
         
+      - name: order_details
+        description: detalhamento das ordens
+
       - name: customers
         description: tabela de clientes
 
