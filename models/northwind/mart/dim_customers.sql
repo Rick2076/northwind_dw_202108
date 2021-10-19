@@ -21,6 +21,7 @@ WITH
         row_number() over (order by customer_id) as customer_sk
         ,*
     from selected
+    order by customer_sk
 )
 
 SELECT* From transformed

@@ -19,9 +19,10 @@ WITH
 )
     ,transformed as (
         SELECT 
-            row_number() over(order by shipper_id) as shipper_sk
+            row_number() over(order by supplier_id) as supplier_sk
             ,*	
         FROM selected
+        order by supplier_sk
 )
 
 SELECT* From transformed

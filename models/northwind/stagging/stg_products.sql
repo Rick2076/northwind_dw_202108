@@ -12,9 +12,9 @@ WITH
         , units_on_order			
         , quantity_per_unit
         , reorder_level 	
-        , case when
-            when discontinued = 1 then True
-            else False
+        , case
+                when discontinued = 1 then True
+                else False
             end as is_discotinued
             
         ---Sticht
@@ -22,7 +22,7 @@ WITH
         ,_sdc_received_at
         ,_sdc_sequence
         ,_sdc_batched_at
-    from {{ source('northwind_erp','products') }}
+    from {{ source('northwind_etl','products') }}
     )
 
 SELECT * from sources
